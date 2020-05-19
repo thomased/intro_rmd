@@ -21,3 +21,10 @@
 - the package 'rmarkdown'
   - `install.packages('rmarkdown')`
 - If you want to compile documents to `.pdf`, you'll need a (free) installation of LaTeX. Follow the link for your operating system [here](https://www.latex-project.org/get/) 
+
+### Further (free) resources 
+
+- [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+- [Report Writing for Data Science in R](https://leanpub.com/reportwriting)
+- [R for Data Science](http://r4ds.had.co.nz/)
+- [Advanced R](https://adv-r.hadley.nz/)
