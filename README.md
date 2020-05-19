@@ -3,10 +3,15 @@
 ### Contents
 
 - **/data**: example data
-    - meta_data.csv: meta-data describing the contents and structure of orientations.csv
+    - example_data.csv: a simple example dataset (simulated)
 - **/docs**: example R Markdown document
+    - default.eg: just the default R Markdown filler for toying with
+    - eg_including_analysis.Rmd: example scientific manuscript, with the analysis run in the same document
+    - eg_separate_analysis.Rmd: example scientific manuscript, with the analysis sourced from a separate analysis script
+    - references.bib: a BibTeX file containing the few references used in the markdown docs
+    - ref.style.csl: style sheet for formatting the reference list as per _The American Naturalist_
 - **/lit**: R Markdown cheatsheet
-- **/R**: example R code for data processing & analysis
+- **/R**: example R code for data processing & analysis, to be sourced from the markdown document
 - **/slides**: introductory slides, built using R Markdown
 
 ### What you need
