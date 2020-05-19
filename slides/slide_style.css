@@ -1,0 +1,35 @@
+h1, h2, h3 {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+slides > slide {
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+}
+
+/* Comments */
+.prettyprint .com {
+  /* a comment */
+  color: green;
+  font-style: normal;
+}
+
+/* Strings */
+.prettyprint .str,
+.prettyprint .atv {
+  /* a markup attribute value */
+  color: blue;
+}
+
+/* line 604, ../scss/default.scss */
+.prettyprint .lit {
+  /* a literal value */
+  color: black;
+}
+
+/* line 609, ../scss/default.scss */
+.prettyprint .pun,
+.prettyprint .opn,
+.prettyprint .clo {
+  color: black;
+}

@@ -1,0 +1,107 @@
+---
+title: "A simple paper example"
+output: pdf_document
+header-includes:
+    - \usepackage{setspace}\doublespacing
+    - \usepackage{lineno}\linenumbers
+    - \usepackage{float}
+bibliography: references.bib
+csl: ref_style.csl
+indent: true
+---
+```{r setup, echo=FALSE, message=FALSE}
+knitr::opts_chunk$set(fig.align = 'center',
+                      fig.pos = 'H',
+                      warning = FALSE,
+                      message = FALSE)
+```
+
+```{r libraries_data, include=FALSE}
+
+# Load library
+library(ggplot2)
+
+# Load data
+eg_dat <- read.csv('../data/example_data.csv')
+```
+
+Thomas E. White^1^
+
+\  
+
+^1^ The University of Sydney
+
+\  
+
+**Keywords:** rmd, markdown, example  
+
+**Word count:** a few  
+
+**Figures:** several  
+
+\newpage
+
+## Abstract
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod varius placerat. Phasellus tempor tempus risus sed tristique. Etiam turpis sapien, ornare eu aliquet sit amet, efficitur eget ante. Quisque ac posuere justo, vitae gravida lacus. Cras in elit a elit placerat molestie. Vestibulum pretium consectetur facilisis. Fusce volutpat enim sem, a ultricies libero pretium sit amet. Aenean scelerisque risus urna, sed mollis odio fringilla eu. Vestibulum erat massa, sollicitudin ut dignissim nec, blandit ac tortor. Donec sollicitudin elit nec libero accumsan maximus. Maecenas vel magna varius arcu gravida scelerisque. Sed tincidunt diam vestibulum, cursus sapien at, commodo nibh. Donec mollis metus orci, vitae volutpat mauris tempus a. Donec efficitur pellentesque tellus eu consectetur.
+
+\newpage
+
+## Introduction
+
+Like humans, slime moulds are often irrational, and become agressive toward fellow commuters in congested traffic [@latty2011irrational]. On the other hand, the chemical composition of mycorrhizal and non-mycorrhizal apples is quite dissimilar [@mosse1957growth]. To begin a new paragraph, remember to either leave a blank line in your markdown document, or end the final line with two spaces. 
+
+Here's a new paragraph [@darwin2009origin]. Cool! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras euismod varius placerat. Phasellus tempor tempus risus sed tristique. Etiam turpis sapien, ornare eu aliquet sit amet, efficitur eget ante. Quisque ac posuere justo, vitae gravida lacus. Cras in elit a elit placerat molestie.
+
+## Methods
+
+Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah check out this nice equation:
+
+$$
+\begin{aligned}
+  \dot{x} & = \sigma(y-x) \\
+  \dot{y} & = \rho x- y - xz 
+\end{aligned}
+$$
+
+Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
+
+
+## Results
+
+```{r statistics, include=FALSE}
+# Do some modelling, and save the results to objects 
+stat_model <- lm(abundance ~ density, data = eg_dat) 
+stat_model_summary <- summary(stat_model)  
+```
+
+We found many significant things. The average abundance was `r mean(eg_dat$abundance)` $\pm$ `r sd(eg_dat$abundance)`. Our statistical model spat out am R^2^ value of `r stat_model_summary$r.squared` and a _p_ value of `r coef(stat_model_summary)[2,4]`. As shown in Fig. 1, the relationship between density and abundance was strong.
+
+```{r model_plot, echo=FALSE, fig.pos="H", message =FALSE, fig.dim = c(5, 3), fig.cap = "Abundance versus density by group, with model fits."}
+ggplot(eg_dat, aes(x = density, y = abundance, color = group)) +
+  geom_point() + 
+  geom_smooth(method = lm) +
+  theme_bw() + 
+  theme(legend.position = 'none')
+```
+
+On the other hand, we can draw little circles around the data too (Fig. 2) which is nice.
+
+```{r elipse_plot, echo=FALSE, fig.dim = c(5, 3), fig.cap = "Abundance versus density by group, with ellipses."}
+ggplot(eg_dat, aes(x = density, y = abundance, color = group)) +
+  geom_point() + 
+  stat_ellipse(type = "norm") +
+  theme_bw() + 
+  theme(legend.position = 'none')
+```
+
+## Discussion
+
+This was great.
+
+## Acknowledgements
+
+Yes.
+
+## References
+
