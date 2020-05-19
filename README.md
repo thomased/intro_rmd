@@ -1,8 +1,4 @@
----
-title: "A brief introduction to R Markdown"
-output: pdf_document
-urlcolor: blue
----
+## A brief introduction to R Markdown
 
 ### Contents
 
