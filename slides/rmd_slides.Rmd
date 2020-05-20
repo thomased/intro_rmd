@@ -10,7 +10,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## R Markdown = R + Markdown
@@ -109,11 +109,15 @@ And if you want to add some basic formatting, there are just a handful of tricks
 
 ## So what is R Markdown?
 
-It allows us to combine both R and Markdown to weave code and/or **its output** and text into a single document. You include text just by writing like this. Blah blah blah. You can include code and/or its results in two ways. One is via code **chunks** that look like this:
+It allows us to combine both R and Markdown to weave code and/or **its output** and text into a single document. You include text just by writing like this. Blah blah blah. You can include code and/or its results in two ways. One is via a code **chunk** that looks like...
 
-## Code-chunk example
+## Chunk
 
-```{r, echo = TRUE}
+![](img/chunk.png){width=700px,}
+
+## Chunk
+
+```{r}
 # Fake some data properly
 spider_colony_a <- rnorm(97, 44, 13)
 spider_colony_b <- rnorm(115, 56, 18)
@@ -121,7 +125,7 @@ spider_colony_b <- rnorm(115, 56, 18)
 t.test(spider_colony_a, spider_colony_b)  # Publish!
 ```
 
-## In-line example
+## In-line
 
 The other way to include code is inline, which replaces text with output. For example, let's round $\pi$ to two decimals by including this bit of code
 ```{r, eval = FALSE, echo=TRUE}
