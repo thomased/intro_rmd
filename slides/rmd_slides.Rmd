@@ -4,6 +4,7 @@ author: "Thomas White"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   ioslides_presentation:
+    transition: "faster"
     css: slide_style.css
     widescreen: yes
 ---
@@ -20,8 +21,8 @@ R markdown combines **R** with **Markdown** into a flexible tool for creating re
 
 R markdown combines **R** with **Markdown** into a flexible tool for creating reproducible, dynamic documents. So wherever you need to combine code or its output with text, then R Markdown might be worth considering. Example use-cases include:
 
-- Writing a scientific paper (wouldn't recommend as a _first_ exercise, but perfectly doable)
-- Writing a technical document or whatever it is people do outside of academia
+- Writing a scientific paper (as we'll see)
+- Writing a technical document or whatever it is people do outside of academia?
 - 'Thinking out loud' with/for collaborators (do this a fair bit) 
 - Creating slides (like these ones!) or webpages
 
